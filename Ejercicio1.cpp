@@ -47,7 +47,7 @@ void llenar()
 void buscar()
 {
     int codigoabuscar;
-    cout << "Ingrese el codigo del producto: ";
+    cout << "Ingrese el codigo del producto:  ";
     cin >> codigoabuscar;
     for (int i = 0; i < totalinventario; i++)
     {
