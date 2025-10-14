@@ -1,0 +1,13 @@
+Nuevas librerias: manejo de archivos
+<fstream>
+<string>
+
+
+ofstream = crear, escribir y sobreescribir 
+ifstream = leer un archivo
+
+dos tipos de archivos: txt o bin (binario)
+
+void funcion que no te devuelve nada
+
+
