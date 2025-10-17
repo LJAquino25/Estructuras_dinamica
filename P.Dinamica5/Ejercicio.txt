@@ -1,0 +1,42 @@
+Ejercicio DSA (Data Structure Algorithm) 
+
+Título: Gestión de tareas con estructuras dinámicas y algoritmos de búsqueda y ordenamiento en C++ 
+
+Descripción: 
+-Se desea implementar un sistema de gestión de tareas que permita al usuario realizar las siguientes operaciones: 
+0-Agregar tareas con un nombre y una prioridad (1 = alta, 2 = media, 3 = baja). 
+0-Mostrar todas las tareas registradas. 
+-Ordenar las tareas por prioridad de manera ascendente. 
+0-Buscar una tarea por nombre utilizando una búsqueda lineal. 
+0-Procesar tareas urgentes utilizando una pila (LIFO), de modo que las tareas de alta prioridad se procesen primero. 
+0-Procesar tareas en espera utilizando una cola (FIFO), para las tareas de prioridad media o baja. 
+
+
+
+El sistema debe mantener tres estructuras principales: 
+0-Una lista (std::list) que almacene todas las tareas y permita ordenarlas. 
+0-Una  pila (std::stack) para las tareas urgentes (alta prioridad). 
+0-Una cola (std::queue) para las tareas en espera (media o baja prioridad). 
+
+
+
+Se debe usar funciones y algoritmos de la biblioteca estándar de C++ para: 
+-Mostrar y recorrer la lista de tareas. 
+-Ordenar la lista mediante un comparador personalizado (sort). 
+-Buscar tareas usando find_if. 
+
+
+
+Objetivo del ejercicio: 
+
+Aplicar estructuras dinámicas (stack, queue, list). 
+Implementar algoritmos de búsqueda y ordenamiento con funciones de la STL. 
+Practicar el manejo de condicionales, ciclos y funciones en C++. 
+
+
+
+Requerimientos adicionales: 
+
+El usuario interactúa mediante un menú de opciones hasta que decida salir. 
+La búsqueda de tareas debe indicar si la tarea fue encontrada o no.
+El procesamiento de tareas en pila o cola debe mostrar los elementos a medida que se eliminan de la estructura. 
