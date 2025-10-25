@@ -69,9 +69,21 @@ void Mostrar(list<Biblioteca> &biblioteca)
 
 void ordenar(list<Biblioteca> &biblioteca)
 {
+    /* Se ordenan por nombre de biblioteca se usa esta estructura al ser una lista
+
     biblioteca.sort([](const Biblioteca &nuevo, const Biblioteca &nueva)
                     { return nuevo.Nombre < nueva.Nombre; });
     cout << "Biblioteca ordenada" << endl;
+    */
+
+    // se ordenan los libros por año de publicacion
+    for (auto &biblio : biblioteca)
+    {
+        sort(biblio.coleccion.begin(), biblio.coleccion.end(), [](const Libro &a, const Libro &b)
+
+             { return a.Ano_Publicacion < b.Ano_Publicacion; });
+    }
+    cout << "Libros ordenados por año de publicación en cada biblioteca" << endl;
 }
 
 void Buscar(const list<Biblioteca> &biblioteca)
