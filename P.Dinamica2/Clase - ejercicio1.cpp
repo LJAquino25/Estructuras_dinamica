@@ -3,7 +3,7 @@
 using namespace std;
 
 struct Producto {
-    int codigo; 
+    int codigo;
     string nombre;
     float precio;
     int cantidad;
