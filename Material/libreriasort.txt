@@ -79,6 +79,8 @@ struct Persona {
     int edad;
 };
 // Ordenar por edad
-lista.sort({[](const Persona &a < b.edad; });
+lista.sort([](const Persona &a < b.edad);
+
+{});
 
 */
