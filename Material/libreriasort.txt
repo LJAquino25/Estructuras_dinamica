@@ -1,0 +1,84 @@
+/*
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <list>
+#include <string>
+using namespace std;
+
+int main()
+{
+    vector<int> numeros = {5, 2, 9, 1, 7};
+
+    // Ordenar de menor a mayor
+    sort(numeros.begin(), numeros.end());
+
+    cout << "Vector ordenado:\n";
+    for (int num : numeros)
+    {
+        cout << num << " ";
+    }
+
+    return 0;
+}
+---------------------------------------------------------------------------------------------------------------
+int main() {
+    list<string> nombres = {"Carlos", "Ana", "Luis", "Beatriz"};
+
+    // Ordenar alfabéticamente
+    nombres.sort();
+
+    cout << "Lista ordenada de nombres:\n";
+    for (const auto& nombre : nombres) {
+        cout << nombre << "\n";
+    }
+
+    return 0;
+}
+
+---------------------------------------------------------------------------------------------------------------
+
+void ordenar(list<Biblioteca> &biblioteca)
+{
+    Se ordenan por nombre de biblioteca se usa esta estructura al ser una lista
+
+    biblioteca.sort([](const Biblioteca &nuevo, const Biblioteca &nueva)
+                    { return nuevo.Nombre < nueva.Nombre; });
+    cout << "Biblioteca ordenada" << endl;
+
+-----------------------------------------------------------------------------------------------------------------
+    // se ordenan los libros por año de publicacion
+    for (auto &biblio : biblioteca)
+    { // aca se declaran las variables
+        sort(biblio.coleccion.begin(), biblio.coleccion.end(), [](const Libro &a, const Libro &b)
+
+             { return a.Ano_Publicacion < b.Ano_Publicacion; });
+    }
+    cout << "Libros ordenados por año de publicación en cada biblioteca" << endl;
+}
+---------------------------------------------------------------------------------------------------------------------------
+
+int main() {
+    list<int> numeros = {5, 2, 8, 1, 3};
+
+    numeros.sort(); // Ordena de menor a mayor
+
+    cout << "Lista ordenada de números:\n";
+    for (int num : numeros) {
+        cout << num << " ";
+    }
+
+    return 0;
+}
+--------------------------------------------------------------------------------------------------------------------------
+Objetos personalizados como los struct
+
+
+struct Persona {
+    string nombre;
+    int edad;
+};
+// Ordenar por edad
+lista.sort({[](const Persona &a < b.edad; });
+
+*/
