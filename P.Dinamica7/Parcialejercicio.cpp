@@ -78,8 +78,8 @@ void ordenar(list<Biblioteca> &biblioteca)
 
     // se ordenan los libros por año de publicacion
     for (auto &biblio : biblioteca)
-    {                                                          //aca se declaran las variables
-        sort(biblio.coleccion.begin(), biblio.coleccion.end(),[](const Libro &a, const Libro &b)
+    { // aca se declaran las variables
+        sort(biblio.coleccion.begin(), biblio.coleccion.end(), [](const Libro &a, const Libro &b)
 
              { return a.Ano_Publicacion < b.Ano_Publicacion; });
     }
