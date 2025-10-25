@@ -84,3 +84,50 @@ lista.sort([](const Persona &a < b.edad);
 {});
 
 */
+-------------------------------------------------------------------------------------------------------------------
+/*
+
+void solicitarInformacion(list<Biblioteca> &bibliotecas)
+{
+    int cantidadBibliotecas;
+    cout << "¿Cuántas bibliotecas desea registrar? ";
+    cin >> cantidadBibliotecas;
+    cin.ignore(); // limpia el buffer
+
+    for (int i = 0; i < cantidadBibliotecas; i++)
+    {
+        Biblioteca b;
+        cout << "\n=== Biblioteca #" << (i + 1) << " ===" << endl;
+        cout << "Ingrese el nombre de la biblioteca: ";
+        getline(cin, b.nombre);
+
+        cout << "Ingrese la ubicación de la biblioteca: ";
+        getline(cin, b.ubicacion);
+
+        int cantidadLibros;
+        cout << "¿Cuántos libros tiene esta biblioteca? ";
+        cin >> cantidadLibros;
+        cin.ignore();
+
+        for (int j = 0; j < cantidadLibros; j++)
+        {
+            Libro l;
+            cout << "\n--- Libro #" << (j + 1) << " ---" << endl;
+            cout << "Título: ";
+            getline(cin, l.titulo);
+            cout << "Autor: ";
+            getline(cin, l.autor);
+            cout << "Año de publicación: ";
+            cin >> l.anioPublicacion;
+            cout << "Número de páginas: ";
+            cin >> l.paginas;
+            cin.ignore();
+
+            b.libros.push_back(l);
+        }
+
+        bibliotecas.push_back(b);
+        cout << "\nBiblioteca registrada correctamente ✅\n";
+    }
+}
+*/
