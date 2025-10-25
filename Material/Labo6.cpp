@@ -13,9 +13,9 @@ struct hotel
     string estado;
 };
 
-void OrdenarPorPrecio(list<hotel> &hotel1)
+void OrdenarPorPrecio(list<hotel> &habitaciones)
 {
-    hotel1.sort([](const hotel &h, const hotel &H)
+    habitaciones.sort([](const hotel &h, const hotel &H)
                 { return h.precio < H.precio; });
     cout << "Habitaciones ordenadas por precio" << endl;
 }
@@ -84,7 +84,6 @@ void Mostrar(const list<hotel> &habitaciones)
 int main()
 {
     list<struct hotel> habitaciones;
-    hotel habitacion;
     int opcion;
     do
     {
