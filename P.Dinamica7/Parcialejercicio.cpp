@@ -21,20 +21,22 @@ struct Biblioteca
 void Solicitar_Informacion(list<Biblioteca> &biblioteca)
 {
     Biblioteca nueva;
-    char cont;
     cout << "Ingrese los datos de la Biblioteca:" << endl;
     cout << "Nombre: ";
     getline(cin >> ws, nueva.Nombre);
     cout << "Horario de apertura: ";
     getline(cin >> ws, nueva.Horario_Apertura);
-    cout << "Continuar? (S/s o N/n)";
+
+    char cont = 's';
+
+    cout << "Ingrese los libros: ";
+
     while (cont == 's' || cont == 'S')
     {
         Libro nuevo;
-        cout << "Ingrese los datos de la Biblioteca:" << endl;
         cout << "Titulo: ";
         getline(cin >> ws, nuevo.Titulo);
-        cout << "Horario de apertura: ";
+        cout << "Ano de publicacion: ";
         cin >> nuevo.Ano_Publicacion;
 
         nueva.coleccion.push_back(nuevo);
@@ -46,22 +48,30 @@ void Solicitar_Informacion(list<Biblioteca> &biblioteca)
     cout << "Biblioteca registrada" << endl;
 }
 
-void Mostrar(list<Biblioteca> &biblioteca, vector<Libro> &coleccion)
+void Mostrar(list<Biblioteca> &biblioteca)
 {
-    for (Biblioteca i : biblioteca)
+    for (Biblioteca &nueva : biblioteca)
     {
         cout << "-------------------" << endl;
-        cout << "Nombre: " << i.Nombre << endl;
-        cout << "Horario: " << i.Horario_Apertura << endl;
-        for (Libro t : coleccion)
+        cout << "Nombre: " << nueva.Nombre << endl;
+        cout << "Horario: " << nueva.Horario_Apertura << endl;
+        cout << "Libros:\n";
+        for (Libro nuevo : nueva.coleccion)
         {
             cout << "-------------------" << endl;
-            cout << "Titulo: " << t.Titulo << endl;
-            cout << "Ano de publicacion: " << t.Ano_Publicacion << endl;
+            cout << "Titulo: " << nuevo.Titulo << endl;
+            cout << "Ano de publicacion: " << nuevo.Ano_Publicacion << endl;
         }
         cout << endl;
     }
     cout << endl;
+}
+
+void ordenar(list<Biblioteca> &biblioteca)
+{
+    biblioteca.sort([](const Biblioteca &nuevo, const Biblioteca &nueva)
+                    { return nuevo.Nombre < nueva.Nombre; });
+    cout << "Biblioteca ordenada" << endl;
 }
 
 void Buscar(const list<Biblioteca> &biblioteca)
@@ -71,12 +81,30 @@ void Buscar(const list<Biblioteca> &biblioteca)
     getline(cin >> ws, busqueda);
 
     // Busquedad binario por texto
-    auto bibliotecaEncontrada = find_if(
+    auto Encontrada = find_if(
         biblioteca.begin(),
         biblioteca.end(),
         [&](const Biblioteca &nueva)
-        { return nueva.Nombre == busqueda;}
-        );
+        { return nueva.Nombre == busqueda; });
+
+    if (Encontrada != biblioteca.end())
+    {
+        cout << "\nBiblioteca encontrada:\n";
+        cout << "-------------------" << endl;
+        cout << "Nombre: " << Encontrada->Nombre << endl;
+        cout << "Ubicacion: " << Encontrada->Horario_Apertura << endl;
+        cout << "Libros:\n";
+        for (const auto &nuevo : Encontrada->coleccion)
+        {
+            cout << "-------------------" << endl;
+            cout << "Titulo: " << nuevo.Titulo << endl;
+            cout << "Ano de publicacion: " << nuevo.Ano_Publicacion << endl;
+        }
+    }
+    else
+    {
+        cout << "\nNo se encontro una biblioteca con ese nombre.\n";
+    }
 }
 
 int main()
@@ -90,7 +118,8 @@ int main()
         cout << "1.Solicitar informacion" << endl;
         cout << "2.Mostrar informacion" << endl;
         cout << "3.Ordenar informacion" << endl;
-        cout << "4.Salir" << endl;
+        cout << "4.Buscar informacion" << endl;
+        cout << "5.Salir" << endl;
         cin >> op;
         switch (op)
         {
@@ -98,15 +127,18 @@ int main()
             Solicitar_Informacion(biblioteca);
             break;
         case 2:
-            Mostrar(biblioteca, coleccion);
+            Mostrar(biblioteca);
             break;
         case 3:
-
+            ordenar(biblioteca);
+            break;
+        case 4:
+            Buscar(biblioteca);
             break;
         default:
             break;
         }
-    } while (op != 4);
+    } while (op != 5);
 
     return 0;
 }
