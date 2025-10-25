@@ -105,6 +105,7 @@ void Buscar(const list<Biblioteca> &biblioteca)
         cout << "-------------------" << endl;
         cout << "Nombre: " << Encontrada->Nombre << endl;
         cout << "Ubicacion: " << Encontrada->Horario_Apertura << endl;
+        // se usa la flecha para acceder y leer el dato
         cout << "Libros:\n";
         for (const auto &nuevo : Encontrada->coleccion)
         {
@@ -122,7 +123,6 @@ void Buscar(const list<Biblioteca> &biblioteca)
 int main()
 {
     list<Biblioteca> biblioteca;
-    vector<Libro> coleccion;
     int op;
     do
     {
