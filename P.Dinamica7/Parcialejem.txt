@@ -1,0 +1,50 @@
+CASO PRACTICO: Biblioteca
+Crear un programa que gestione la información sobre bibliotecas y sus colecciones
+de libros utilizando estructuras dinámicas de datos lineales. La estructura de
+colección de libros estará anidada dentro de la estructura de biblioteca.
+Estructuras de datos:
+
+Para cada biblioteca, se definirá una estructura que almacene dos campos como
+máximo:
+• Nombre (string)
+• Ubicación (string)
+• Teléfono (string)
+• Número de empleados (int)
+• Horario de apertura (string)
+
+
+Para cada libro, se definirá una estructura que almacene:
+• Título (string)
+• Autor (string)
+• Año de publicación (int)
+• Número de páginas (int)
+
+
+Estructuras dinámicas:
+• Lista dinámica (list) para almacenar las bibliotecas.
+• Arreglo dinámico (vector) dentro de cada biblioteca para almacenar los libros
+que pertenecen a su colección.
+
+
+Funcionalidades requeridas:
+
+1. Solicitar información:
+Función que permita ingresar los datos de una biblioteca y su colección de
+libros. Se debe permitir agregar varios libros a cada biblioteca.
+
+2. Imprimir información:
+Función que reciba como parámetro la lista de bibliotecas y muestre los datos
+de cada biblioteca junto con sus libros.
+
+3. Ordenar bibliotecas:
+Función que permita ordenar la lista de bibliotecas según un criterio definido
+(por ejemplo, nombre o número de empleados).
+
+4. Buscar biblioteca:
+Función que permita buscar una biblioteca por su nombre e imprimir toda la
+información de la biblioteca y sus libros asociados.
+
+5. Función principal:
+En el main, se deben llamar a las funciones anteriores y permitir que el usuario
+agregue, visualice, busque y ordene bibliotecas y sus colecciones de libros
+mediante menús interactivos.
