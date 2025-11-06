@@ -1,0 +1,15 @@
+Caso práctico: “Detección de transacciones sospechosas en un banco” 
+
+Imagina que trabajas en el sistema de un banco, tu tarea es analizar una lista de transacciones y: 
+
+Detectar si algún cliente hizo transacciones duplicadas (mismo monto y misma cuenta el mismo día). 
+
+Contar cuántas transacciones hizo cada cliente. 
+
+Conceptos a practicar: 
+
+unordered_set: detectar duplicados rápidamente (transacciones repetidas). 
+
+unordered_map: llevar estadísticas por cliente (conteo de transacciones). 
+
+Hash eficiente en tiempo promedio O(1). 
